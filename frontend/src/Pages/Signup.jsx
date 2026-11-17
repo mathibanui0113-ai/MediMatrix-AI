@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./Signup.css";
 
 function Signup({ onBackLogin }) {
+  const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("Patient");
@@ -40,7 +42,7 @@ function Signup({ onBackLogin }) {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/signup",
+        `${API_BASE_URL}/api/signup`,
         {
           method: "POST",
           headers: {

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./PatientProfile.css";
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-const API_URL = "http://localhost:5000";
-
+const API_URL = API_BASE_URL;
 function PatientProfile({ user }) {
   const [profile, setProfile] = useState({
     fullName: user?.name || "",

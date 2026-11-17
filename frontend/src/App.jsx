@@ -58,8 +58,8 @@ function App() {
   }
 
   if (page === "healthrecords" && user) {
-    return <HealthRecords />;
-  }
+  return <HealthRecords user={user} />;
+}
 
   if (page === "login") {
     return (

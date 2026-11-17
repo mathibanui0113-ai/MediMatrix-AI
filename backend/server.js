@@ -591,38 +591,7 @@ app.get("/api/medicines/:userId", (req, res) => {
 });
 
 // ADD MEDICINE
-app.post("/api/medicines/:userId", (req, res) => {app.get("/api/medicines/:userId", (req, res) => {
-  try {
-    const userId = Number(req.params.userId);
-
-    if (!Number.isInteger(userId) || userId <= 0) {
-      return res.status(400).json({ message: "Invalid user ID." });
-    }
-
-    const user = db.prepare(
-      "SELECT id FROM users WHERE id = ?"
-    ).get(userId);
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found." });
-    }
-
-    const medicines = db.prepare(`
-      SELECT id, user_id, name, dosage, time, taken, created_at
-      FROM medicines
-      WHERE user_id = ?
-      ORDER BY id DESC
-    `).all(userId);
-
-    res.json({ medicines });
-  } catch (error) {
-    console.error("Get medicines error:", error.message);
-    res.status(500).json({
-      message: "Unable to load medicines.",
-    });
-  }
-});
-
+app.post("/api/medicines/:userId", (req, res) => {
   try {
     const userId = Number(req.params.userId);
     const { name, dosage, time } = req.body;
@@ -672,7 +641,6 @@ app.post("/api/medicines/:userId", (req, res) => {app.get("/api/medicines/:userI
     });
   }
 });
-
 // MARK MEDICINE TAKEN / NOT TAKEN
 app.patch("/api/medicines/:userId/:medicineId", (req, res) => {
   try {
@@ -724,7 +692,6 @@ app.patch("/api/medicines/:userId/:medicineId", (req, res) => {
     });
   }
 });
-
 // DELETE MEDICINE
 app.delete("/api/medicines/:userId/:medicineId", (req, res) => {
   try {

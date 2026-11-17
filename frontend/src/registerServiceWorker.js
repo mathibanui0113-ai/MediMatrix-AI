@@ -7,6 +7,8 @@ export async function registerServiceWorker() {
 }
 
 export async function enableNotifications(userId) {
+  const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
   if (!("Notification" in window) || !("PushManager" in window)) {
     throw new Error("Push notifications are not supported in this browser.");
   }
@@ -29,7 +31,7 @@ export async function enableNotifications(userId) {
   await navigator.serviceWorker.ready;
 
   const keyResponse = await fetch(
-    "http://localhost:5000/api/notifications/public-key"
+    `${API_BASE_URL}/api/notifications/public-key`
   );
 
   if (!keyResponse.ok) {
@@ -63,18 +65,18 @@ export async function enableNotifications(userId) {
   }
 
   const response = await fetch(
-    "http://localhost:5000/api/notifications/subscribe",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userId,
-        subscription,
-      }),
-    }
-  );
+  `${API_BASE_URL}/api/notifications/subscribe`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      subscription,
+    }),
+  }
+);
 
   const data = await response.json();
 

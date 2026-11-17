@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "./MedicineReminder.css";
 import { enableNotifications } from "../registerServiceWorker";
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-const API_URL = "http://localhost:5000/api/medicines";
-
+const API_URL = `${API_BASE_URL}/api/medicines`;
 function MedicineReminder({user:propUser}) {
   const [medicines, setMedicines] = useState([]);
   const [form, setForm] = useState({

@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.mm-hero {
+  --cyan: #67e8f9;
+  --purple: #a78bfa;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #f8fafc;
+  background:
+    radial-gradient(ellipse at 80% 15%, #123348 0%, transparent 44%),
+    radial-gradient(ellipse at 100% 80%, #29204a55, transparent 38%),
+    #080c14;
+  padding: 68px 5% 82px;
+  min-height: 690px;
+  overflow: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mm-hero * {
+  box-sizing: border-box;
+}
+
+.mm-layout {
+  max-width: 1380px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 52px;
+  position: relative;
+  z-index: 1;
+}
+
+.mm-copy {
+  min-width: 0;
+}
+
+.mm-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid #67e8f933;
+  border-radius: 50px;
+  color: #a5f3fc;
+  background: #67e8f90a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+.mm-pulse-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: #67e8f9;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #67e8f9a0;
+  animation: mmBlink 1.8s infinite;
+}
+
+.mm-copy h1 {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(44px, 5vw, 70px);
+  line-height: 1.08;
+  letter-spacing: -3px;
+  margin: 28px 0 23px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mm-gradient-text {
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #67e8f9 42%,
+    #818cf8 75%,
+    #c4b5fd 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px #67e8f91a);
+}
+
+.mm-copy > p {
+  color: #a1aabd;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+  max-width: 470px;
+  margin-top: 0;
+}
+
+.mm-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 31px;
+}
+
+.mm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 15px 21px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 13px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.mm-btn-primary {
+  color: #06131b;
+  background: linear-gradient(110deg, #a5f3fc, #67e8f9 55%, #a5b4fc);
+  box-shadow: 0 5px 25px #67e8f920;
+}
+
+.mm-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px #67e8f945;
+}
+
+.mm-btn-secondary {
+  color: #e2e8f0;
+  background: #ffffff05;
+  border: 1px solid #cbd5e126;
+}
+
+.mm-btn-secondary:hover {
+  border-color: #67e8f966;
+  background: #67e8f90b;
+  transform: translateY(-2px);
+}
+
+.mm-trust {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 31px;
+  color: #a1aabd;
+  font-size: 11px;
+}
+
+.mm-trust span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mm-trust b {
+  color: #67e8f9;
+}
+
+.mm-dashboard {
+  min-width: 0;
+  padding: 24px;
+  border-radius: 23px;
+  border: 1px solid #94a3b81c;
+  background:
+    radial-gradient(ellipse at 0% 0%, #1e354530, transparent 55%),
+    linear-gradient(145deg, #141d2b, #0c1320 65%, #151426);
+  box-shadow:
+    0 25px 80px #00000060,
+    0 0 45px #67e8f90a,
+    inset 0 1px 0 #ffffff0b;
+  position: relative;
+  animation: mmFloat 6s ease-in-out infinite;
+}
+
+.mm-dashboard::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    130deg,
+    #67e8f955,
+    transparent 35%,
+    #a78bfa55,
+    transparent 85%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.mm-dash-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.mm-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mm-brand-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(140deg, #67e8f91b, #a78bfa24);
+  color: #a5f3fc;
+  border: 1px solid #67e8f933;
+  font-size: 25px;
+  box-shadow: 0 0 24px #67e8f90b;
+}
+
+.mm-brand strong {
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.35px;
+  color: #f8fafc;
+}
+
+.mm-brand small {
+  display: block;
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-top: 5px;
+}
+
+.mm-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #a5f3fc;
+  background: #67e8f909;
+  border: 1px solid #67e8f925;
+  border-radius: 30px;
+  padding: 8px 10px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.mm-dash-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.mm-dash-title h2 {
+  margin: 0 0 7px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  color: #f8fafc;
+}
+
+.mm-dash-title p {
+  margin: 0;
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.mm-dash-title > span {
+  color: #c4b5fd;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.mm-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.mm-card {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 15px;
+  border: 1px solid #cbd5e10f;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.mm-card:hover {
+  transform: translateY(-4px);
+  border-color: #67e8f947;
+  box-shadow: 0 8px 30px #67e8f90b;
+}
+
+.mm-card-heart {
+  background: linear-gradient(145deg, #251923, #151521);
+}
+
+.mm-card-blue {
+  background: linear-gradient(145deg, #142535, #111925);
+}
+
+.mm-card-purple {
+  background: linear-gradient(145deg, #211d35, #171623);
+}
+
+.mm-card-green {
+  background: linear-gradient(145deg, #142b2b, #111c21);
+}
+
+.mm-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.mm-icon {
+  width: 37px;
+  height: 37px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  background: #ffffff08;
+  flex-shrink: 0;
+}
+
+.mm-heart {
+  color: #ff7f9e;
+  text-shadow: 0 0 6px #ff7897, 0 0 17px #ff547d90;
+  animation: mmHeart 1.4s ease-in-out infinite;
+}
+
+.mm-blue-icon {
+  color: #67d5fa;
+}
+
+.mm-purple-icon {
+  color: #c4b5fd;
+}
+
+.mm-green-icon {
+  color: #5eead4;
+}
+
+.mm-card-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #c0cad8;
+}
+
+.mm-card-value {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.8px;
+  color: #f8fafc;
+}
+
+.mm-card-value-small {
+  font-size: 19px;
+}
+
+.mm-card-unit {
+  color: #a8b4c7;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.mm-card-note {
+  color: #9aa8bb;
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 9px;
+}
+
+.mm-ecg {
+  height: 43px;
+  margin-top: 8px;
+}
+
+.mm-ecg svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mm-ecg path {
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  animation: mmECG 3s linear infinite;
+  filter: drop-shadow(0 0 4px #ff668888);
+}
+
+.mm-bars {
+  height: 43px;
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.mm-bars span {
+  flex: 1;
+  border-radius: 4px 4px 1px 1px;
+  background: linear-gradient(to top, #527cae66, #67c8ed);
+  box-shadow: 0 0 8px #82c8e918;
+  animation: mmBars 2s ease-in-out infinite alternate;
+}
+
+.mm-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 13px;
+}
+
+.mm-insight,
+.mm-reminder {
+  border-radius: 14px;
+  padding: 15px;
+  border: 1px solid #cbd5e110;
+  background: #ffffff04;
+  min-width: 0;
+}
+
+.mm-insight-title {
+  color: #c4b5fd;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.7px;
+}
+
+.mm-insight p {
+  color: #a1aabd;
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 10px 0 0;
+}
+
+.mm-reminder-title {
+  color: #f1f5f9;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mm-reminder-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #b0bdcf;
+  font-size: 10px;
+  margin-top: 13px;
+  line-height: 1.6;
+}
+
+.mm-reminder-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  border-radius: 9px;
+  background: #67e8f90e;
+  color: #a5f3fc;
+}
+
+.mm-note {
+  text-align: center;
+  color: #8492a7;
+  font-size: 9px;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+@keyframes mmBlink {
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 4px #67e8f955;
+  }
+}
+
+@keyframes mmHeart {
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes mmFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes mmECG {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mmBars {
+  from {
+    opacity: 0.65;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mm-dashboard,
+  .mm-pulse-dot,
+  .mm-heart,
+  .mm-ecg path,
+  .mm-bars span {
+    animation: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .mm-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .mm-copy {
+    max-width: 650px;
+  }
+
+  .mm-copy > p {
+    max-width: 600px;
+  }
+
+  .mm-dashboard {
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .mm-hero {
+    padding: 40px 4% 50px;
+  }
+
+  .mm-copy h1 {
+    font-size: clamp(40px, 11vw, 52px);
+    letter-spacing: -2px;
+  }
+
+  .mm-dashboard {
+    padding: 14px;
+    border-radius: 19px;
+  }
+
+  .mm-dash-head {
+    align-items: flex-start;
+  }
+
+  .mm-brand {
+    gap: 9px;
+  }
+
+  .mm-brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mm-live {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+
+  .mm-card {
+    padding: 12px;
+  }
+
+  .mm-card-value {
+    font-size: 20px;
+  }
+
+  .mm-card-value-small {
+    font-size: 17px;
+  }
+
+  .mm-card-top {
+    flex-wrap: wrap;
+  }
+
+  .mm-bottom {
+    gap: 9px;
+  }
+
+  .mm-insight,
+  .mm-reminder {
+    padding: 11px;
+  }
+
+  .mm-dash-title h2 {
+    font-size: 18px;
+  }
+
+  .mm-dash-title p {
+    font-size: 10px;
+  }
+
+  .mm-trust {
+    gap: 12px;
+  }
+}

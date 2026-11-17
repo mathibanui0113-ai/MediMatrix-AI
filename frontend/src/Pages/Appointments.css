@@ -1,0 +1,153 @@
+.appointments-page {
+  padding: 24px;
+  color: #1e293b;
+}
+
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.appointments-header h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+.appointments-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.appointment-count {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.appointment-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+.appointment-card h3 {
+  margin: 0 0 20px;
+}
+
+.appointment-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appointment-card label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.appointment-card input,
+.appointment-card select,
+.appointment-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  margin-bottom: 8px;
+}
+
+.appointment-card input:focus,
+.appointment-card select:focus,
+.appointment-card textarea:focus {
+  outline: 2px solid #7dd3fc;
+  border-color: #0284c7;
+}
+
+.appointment-card form > button {
+  padding: 12px;
+  background: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.appointment-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.appointment-message {
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  overflow-wrap: anywhere;
+}
+
+.appointments-empty {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.appointment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.appointment-item h4 {
+  margin: 0 0 8px;
+}
+
+.appointment-item p {
+  margin: 5px 0;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+
+.appointment-cancel {
+  padding: 8px 12px;
+  color: #b91c1c;
+  background: #fee2e2;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .appointments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appointments-page {
+    padding: 14px;
+  }
+}

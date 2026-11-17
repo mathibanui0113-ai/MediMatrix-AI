@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Hero from "./components/Hero";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
-import PatientProfile from "./pages/PatientProfile";
-import HealthRecords from "./pages/HealthRecords";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import Dashboard from "./Pages/Dashboard";
+import PatientProfile from "./Pages/PatientProfile";
+import HealthRecords from "./Pages/HealthRecords";
 
 function App() {
   const [page, setPage] = useState("home");
